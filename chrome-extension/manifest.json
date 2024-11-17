@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Chess Move Predictor",
+    "version": "1.0",
+    "description": "Predicts the best chess move using AI.",
+    "permissions": ["activeTab", "scripting", "storage","tabs"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.chess.com/*", "https://lichess.org/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    }
+  }
+  
